@@ -54,8 +54,8 @@
         ]
     },
     "build": {
-        "productName": "vue-electron-template",
-        "appId": "top.alibt.eblog",
+        "productName": "工具集",
+        "appId": "top.alibt.tool",
         "directories": {
             "output": "build/dist"
         },
