@@ -17,12 +17,14 @@ hljs.registerLanguage('json', json)
 export default {
     data() {
         return {
-            json:
-                '{"code":0,"message":"","data":{"pv":null,"uv":null,"click":null,"click_uv":null}}'
+            json: ''
         }
     },
     computed: {
         fmJson() {
+            if (!this.json) {
+                return ''
+            }
             try {
                 let fm = JSON.stringify(JSON.parse(this.json), null, 2)
                 return fm
