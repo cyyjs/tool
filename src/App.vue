@@ -9,7 +9,7 @@
 <script>
 import MNav from '@/components/nav.vue'
 export default {
-    components: { MNav }
+  components: { MNav }
 }
 </script>
 <style lang="scss" scoped>
