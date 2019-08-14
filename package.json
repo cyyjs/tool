@@ -1,6 +1,6 @@
 {
   "name": "tool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tool",
   "author": "cyy <cyy0418@qq.com>",
   "main": "./electron/main.js",
