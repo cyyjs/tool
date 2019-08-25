@@ -48,6 +48,7 @@ function startVue() {
             process.exit();
         });
     });
+});
 }
 function startElectron() {
     electronProcess = spawn(

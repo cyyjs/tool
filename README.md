@@ -1,13 +1,10 @@
 # tool
+![](https://img.shields.io/badge/Vue-2.6.10-green?logo=vue.js&style=flat)
+![](https://img.shields.io/badge/Electron-6.0.2-green?logo=electron&style=flat)
 
-支持功能
+## 支持功能
 
-- JSON格式化
-
-## 版本
-
-> vue: 2.5.17 
-> electron : 3.0.10
+- [x] JSON格式化
 
 ## 运行
 

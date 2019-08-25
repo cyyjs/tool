@@ -17,41 +17,41 @@ import hljs from 'highlight.js/lib/highlight'
 import json from 'highlight.js/lib/languages/json'
 hljs.registerLanguage('json', json)
 export default {
-    data() {
-        return {
-            json: ''
-        }
-    },
-    computed: {
-        fmJson() {
-            if (!this.json) {
-                return ''
-            }
-            try {
-                let fm = JSON.stringify(JSON.parse(this.json), null, 2)
-                return fm
-            } catch (e) {
-                return e.message
-            }
-        },
-        hfmJson() {
-            return hljs.highlight('json', this.fmJson, true).value
-        }
-    },
-    methods: {
-        copy() {
-            let cp = e => {
-                e.clipboardData.setData('text/plain', this.fmJson)
-                e.preventDefault()
-            }
-            document.addEventListener('copy', cp)
-            document.execCommand('copy')
-            document.removeEventListener('copy', cp)
-            new Notification('消息', {
-                body: '复制成功'
-            })
-        }
+  data () {
+    return {
+      json: ''
     }
+  },
+  computed: {
+    fmJson () {
+      if (!this.json) {
+        return ''
+      }
+      try {
+        let fm = JSON.stringify(JSON.parse(this.json), null, 2)
+        return fm
+      } catch (e) {
+        return e.message
+      }
+    },
+    hfmJson () {
+      return hljs.highlight('json', this.fmJson, true).value
+    }
+  },
+  methods: {
+    copy () {
+      let cp = e => {
+        e.clipboardData.setData('text/plain', this.fmJson)
+        e.preventDefault()
+      }
+      document.addEventListener('copy', cp)
+      document.execCommand('copy')
+      document.removeEventListener('copy', cp)
+      new Notification('消息', {
+        body: '复制成功'
+      })
+    }
+  }
 }
 </script>
 
@@ -95,4 +95,3 @@ textarea {
     }
 }
 </style>
-
