@@ -1,6 +1,8 @@
 <template>
     <div class="box">
-        <div><textarea v-model="json" autofocus placeholder="输入json字符串"></textarea></div>
+        <div>
+            <textarea v-model="json" autofocus placeholder="输入json字符串"></textarea>
+        </div>
         <div class="fm">
             <span class="copy" @click="copy">
                 <i class="fa fa-copy"></i>
@@ -58,9 +60,6 @@ export default {
     display: flex;
     height: 100%;
     justify-content: space-around;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New,
-        monospace;
-
     & > div {
         overflow: auto;
         width: 50%;

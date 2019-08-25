@@ -2,6 +2,7 @@
     <div id="nav" class="drag">
         <!-- <router-link to="/">HOME</router-link> -->
         <router-link to="/fm/json">JSON格式化</router-link>
+        <router-link to="/fm/img2base">图片转Base64</router-link>
     </div>
 </template>
 <style lang="scss" scoped>

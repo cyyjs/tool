@@ -43,11 +43,7 @@ function startVue() {
             }
             console.log(chalk.green(str));
         });
-        vueProcess.stderr.on("data", data => {
-            let str = data.toString();
-            console.log(chalk.red(str));
-        });
-
+        vueProcess.stderr.pipe(process.stderr)
         vueProcess.on("close", () => {
             process.exit();
         });
