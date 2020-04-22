@@ -38,7 +38,7 @@ jobs:
     - name: Upload to release
       uses: docker://gact/upload-to-release:latest
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
         file: './build/dist/'
         type: 'application/octet-stream'
