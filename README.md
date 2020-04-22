@@ -1,10 +1,12 @@
 # tool
-![](https://img.shields.io/badge/Vue-2.6.10-green?logo=vue.js&style=flat)
-![](https://img.shields.io/badge/Electron-6.0.2-green?logo=electron&style=flat)
+![](https://img.shields.io/badge/Vue-2.6.11-green?logo=vue.js&style=flat)
+![](https://img.shields.io/badge/Electron-8.2.3-green?logo=electron&style=flat)
 
 ## 支持功能
 
 - [x] JSON格式化
+- [x] 图片转Base64
+- [x] 使用tinify压缩图片 
 
 ## 运行
 
