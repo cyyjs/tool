@@ -39,7 +39,7 @@ jobs:
         npm run bdm
         
     - name: Upload to release
-      uses: docker://gact/upload-to-release:latest
+      uses: actions-github/upload-to-release@master
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
