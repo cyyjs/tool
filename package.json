@@ -10,9 +10,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "bd": "yarn build && electron-builder",
-    "bdm": "yarn build && electron-builder -m",
-    "bdw": "yarn build && electron-builder -w",
+    "bd": "yarn build && electron-builder --publish never",
+    "bdm": "yarn build && electron-builder -m --publish never",
+    "bdw": "yarn build && electron-builder -w --publish never",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
