@@ -32,6 +32,8 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Run build script
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         npm i
         npm run bdm
