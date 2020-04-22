@@ -33,11 +33,7 @@ jobs:
     - name: Run build script
       run: |
         npm i
-        npm run bdm
-  release:
-    needs: build
-    runs-on: ubuntu-latest 
-    steps:     
+        npm run bdm   
     - name: Upload to release
       uses: ncipollo/release-action@v1
       with:
