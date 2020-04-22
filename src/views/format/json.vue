@@ -73,6 +73,7 @@ textarea {
     outline: none;
     border: 0;
     resize: none;
+    box-sizing: border-box;
 }
 .fm {
     border-left: 1px solid #ccc;

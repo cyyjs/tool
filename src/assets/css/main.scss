@@ -7,14 +7,73 @@ body {
     margin: 0;
     color: #2c3e50;
     font-size: 14px;
+    overflow: hidden;
 }
-
+body{
+    background: #fff;
+}
+input {
+    border: 1px solid #eee;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    padding: 0 5px;
+    outline: none;
+    &:focus {
+        border: 1px solid #429AF4;
+    }
+}
+.form-item {
+    display: flex;
+    margin-bottom: 10px;
+    &>label {
+        font-weight: bold;
+        display: inline-block;
+        width: 80px;
+        margin-right: 10px;
+        line-height: 30px;
+        flex-shrink: 0;
+    }
+    &+.tips{
+        margin-left: 90px;
+        margin-top: -7px;
+        margin-bottom: 10px;  
+        font-size: 12px;  
+    }
+}
+button{
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 3px;
+    line-height: 0;
+    height: 30px;
+    cursor: pointer;
+    &.primary {
+        border:none;
+        color: #fff;
+        background-color: #429AF4;
+        &:hover{
+            background-color: rgba(66, 155, 244, 0.897);
+        }
+    }
+    &.success {
+        border:none;
+        color: #fff;
+        background-color: #34C749;
+    }
+}
+.main {
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 25px;
+}
 .content {
     padding: 20px;
     position: absolute;
     left: 0;
     right: 0;
-    top: 0px;
+    top: 25px;
     bottom: 0;
 }
 

@@ -1,23 +1,31 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
-app.setName('工具集')
+require('./lib/event')
+app.name ='工具集'
+app.allowRendererProcessReuse = false
+
 const Menu = require('./lib/menu')
 const path = require('path')
 const isDev = process.env.NODE_ENV === 'development'
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let willQuitApp = false
 let winurl = isDev
   ? 'http://localhost:8088'
   : 'file://' + path.join(__dirname, '../dist/index.html')
+global.mainurl = winurl
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
+  global.mainWindow = mainWindow = new BrowserWindow({
+    width: 740,
     height: 600,
-    titleBarStyle: 'hidden'
-    // frame: false
-    // transparent: true
+    titleBarStyle: 'hidden',
+    webPreferences: {
+      enableRemoteModule: false,
+      webSecurity: true,
+      nodeIntegration: true
+    }
   })
 
   if (isDev) {
@@ -34,12 +42,14 @@ function createWindow () {
   // and load the index.html of the app.
 
   mainWindow.loadURL(winurl)
-
+  mainWindow.on('close', function (event) {
+    if (!willQuitApp) {
+      event.preventDefault()
+      mainWindow.hide()
+    }
+  })
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null
   })
   mainWindow.once('ready-to-show', () => {
@@ -54,20 +64,17 @@ app.on('ready', createWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
 app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
     createWindow()
+  } else {
+    mainWindow.show()
   }
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+app.on('before-quit', () => willQuitApp = true)

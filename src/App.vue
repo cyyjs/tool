@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <MNav></MNav>
+    <MNav v-show="$route.name !== 'home'"></MNav>
     <div class="main">
-        <router-view/>
+      <router-view/>
     </div>
   </div>
 </template>
@@ -12,13 +12,3 @@ export default {
   components: { MNav }
 }
 </script>
-<style lang="scss" scoped>
-.main {
-    position: absolute;
-    overflow: hidden;
-    top: 55px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-</style>

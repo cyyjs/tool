@@ -1,6 +1,8 @@
 'use strict'
 const { app, Menu, shell } = require('electron')
-let appName = app.getName()
+const setting = require('./setting')
+
+let appName = app.name
 const template = [
     {
         id: 2,
@@ -62,13 +64,15 @@ if (process.platform === 'darwin') {
         label: appName,
         id: 1,
         submenu: [
-            { label: '关于 ' + app.getName(), role: 'about' },
+            { label: '关于 ' + appName, role: 'about' },
             { type: 'separator' },
-            // {
-            //     label: '偏好设置',
-            //     accelerator: 'CmdOrCtrl+,',
-            //     click: function () { }
-            // },
+            {
+                label: '首选项',
+                accelerator: 'CmdOrCtrl+,',
+                click: () => {
+                    setting.open()
+                }
+            },
             { type: 'separator' },
             { label: '服务', role: 'services', submenu: [] },
             // {type: 'separator'},

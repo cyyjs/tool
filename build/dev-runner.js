@@ -35,7 +35,7 @@ function watchFile() {
 
 function startVue() {
     return new Promise(resolove => {
-        vueProcess = spawn("yarn", ["serve"]);
+        vueProcess = spawn("yarn", ["serve"], {stdio:['pipe']});
         vueProcess.stdout.on("data", data => {
             let str = data.toString();
             if (str.includes("running")) {
@@ -43,7 +43,7 @@ function startVue() {
             }
             console.log(chalk.green(str));
         });
-        vueProcess.stderr.pipe(process.stderr)
+        // vueProcess.stderr.pipe(process.stderr)
         vueProcess.on("close", () => {
             process.exit();
         });
