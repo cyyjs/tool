@@ -19,5 +19,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         bodyFile: "CHANGELOG.md"
-        artifacts: "build/icon/*"
+        artifacts: "build/icons/*"
         token: ${{ secrets.ACCESS_TOKEN }}
