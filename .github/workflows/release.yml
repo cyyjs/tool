@@ -34,7 +34,7 @@ jobs:
     - name: Run build script
       run: |
         npm i
-        npm run bd
+        npm run bdm
     - name: Upload to release
       uses: docker://gact/upload-to-release:latest
       env:
