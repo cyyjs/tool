@@ -11,13 +11,36 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  release:
-    runs-on: ubuntu-latest 
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    # Runs a set of commands using the runners shell
+    - name: Run build script
+      run: |
+        npm i
+        npm run bdm
+  release:
+    needs: build
+    runs-on: ubuntu-latest 
+    steps:     
     - name: Upload to release
       uses: ncipollo/release-action@v1
       with:
         bodyFile: "CHANGELOG.md"
-        artifacts: "build/icons/*"
+        artifacts: "build/dist/*"
         token: ${{ secrets.ACCESS_TOKEN }}
