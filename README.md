@@ -1,4 +1,5 @@
 # tool
+![release](https://github.com/cyyjs/tool/workflows/release/badge.svg?branch=master)
 ![](https://img.shields.io/badge/Vue-2.6.11-green?logo=vue.js&style=flat)
 ![](https://img.shields.io/badge/Electron-8.2.3-green?logo=electron&style=flat)
 
