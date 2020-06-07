@@ -18,6 +18,8 @@ global.mainurl = winurl
 function createWindow () {
   // Create the browser window.
   global.mainWindow = mainWindow = new BrowserWindow({
+    minWidth: 740,
+    minHeight: 600,
     width: 740,
     height: 600,
     titleBarStyle: 'hidden',
