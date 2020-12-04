@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "electron-store": "^5.1.1",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.4.1",
     "tinify": "^1.6.0-beta.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
