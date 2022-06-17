@@ -32,7 +32,7 @@
     "conventional-changelog-cli": "^2.0.31",
     "core-js": "^3.6.5",
     "cz-emoji": "^1.2.1",
-    "electron": "^8.2.3",
+    "electron": "^15.5.5",
     "electron-builder": "^22.5.1",
     "electron-devtools-installer": "^3.0.0",
     "eslint": "^6.8.0",
